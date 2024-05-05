@@ -15,6 +15,6 @@ sourceGithubLink = "https://github.com/dscalZi/HeliosLauncher"
 supportLink = "https://github.com/dscalZi/HeliosLauncher/issues"
 
 [ejs.welcome]
-welcomeHeader = "SakuraFalls"
-welcomeDescription = "SakuraFalls is a Minecraft Roleplay Server set in a modern city, done right."
+welcomeHeader = "Baking Soda"
+welcomeDescription = "Baking Soda is a performance-oriented mod-pack for SakuraFalls, a Minecraft Server. We hope you enjoy it!"
 welcomeDescCTA = ""
