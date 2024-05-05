@@ -41,7 +41,7 @@ loginWithMojang = "Login with Mojang"
 cancelButton = "Cancel"
 
 [ejs.overlay]
-serverSelectHeader = "Available Servers"
+serverSelectHeader = "Available Versions"
 serverSelectConfirm = "Select"
 serverSelectCancel = "Cancel"
 accountSelectHeader = "Select an Account"
@@ -168,7 +168,7 @@ loading = "Loading.."
 [js.landing.serverStatus]
 server = "SERVER"
 offline = "OFFLINE"
-players = "PLAYERS"
+players = "PLAY.SAKURAFALLS.NET"
 
 [js.landing.systemScan]
 checking = "Checking system info.."
@@ -257,7 +257,7 @@ failedToggleTitle = "Failed to Toggle<br>One or More Drop-in Mods"
 okButton = "Okay"
 
 [js.settings.serverListing]
-mainServer = "Main Server"
+mainServer = "Main Version"
 
 [js.settings.java]
 selectedJava = "Selected: Java {version} ({vendor})"

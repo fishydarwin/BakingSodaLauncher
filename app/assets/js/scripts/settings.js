@@ -1452,29 +1452,31 @@ function populateAboutVersionInformation(){
  * of the current version. This value is displayed on the UI.
  */
 function populateReleaseNotes(){
-    $.ajax({
-        url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
-        success: (data) => {
-            const version = 'v' + remote.app.getVersion()
-            const entries = $(data).find('entry')
+    return;
+
+    // $.ajax({
+    //     url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
+    //     success: (data) => {
+    //         const version = 'v' + remote.app.getVersion()
+    //         const entries = $(data).find('entry')
             
-            for(let i=0; i<entries.length; i++){
-                const entry = $(entries[i])
-                let id = entry.find('id').text()
-                id = id.substring(id.lastIndexOf('/')+1)
+    //         for(let i=0; i<entries.length; i++){
+    //             const entry = $(entries[i])
+    //             let id = entry.find('id').text()
+    //             id = id.substring(id.lastIndexOf('/')+1)
 
-                if(id === version){
-                    settingsAboutChangelogTitle.innerHTML = entry.find('title').text()
-                    settingsAboutChangelogText.innerHTML = entry.find('content').text()
-                    settingsAboutChangelogButton.href = entry.find('link').attr('href')
-                }
-            }
+    //             if(id === version){
+    //                 settingsAboutChangelogTitle.innerHTML = entry.find('title').text()
+    //                 settingsAboutChangelogText.innerHTML = entry.find('content').text()
+    //                 settingsAboutChangelogButton.href = entry.find('link').attr('href')
+    //             }
+    //         }
 
-        },
-        timeout: 2500
-    }).catch(err => {
-        settingsAboutChangelogText.innerHTML = Lang.queryJS('settings.about.releaseNotesFailed')
-    })
+    //     },
+    //     timeout: 2500
+    // }).catch(err => {
+    //     settingsAboutChangelogText.innerHTML = Lang.queryJS('settings.about.releaseNotesFailed')
+    // })
 }
 
 /**
@@ -1520,31 +1522,33 @@ function settingsUpdateButtonStatus(text, disabled = false, handler = null){
  * @param {Object} data The update data.
  */
 function populateSettingsUpdateInformation(data){
-    if(data != null){
-        settingsUpdateTitle.innerHTML = isPrerelease(data.version) ? Lang.queryJS('settings.updates.newPreReleaseTitle') : Lang.queryJS('settings.updates.newReleaseTitle')
-        settingsUpdateChangelogCont.style.display = null
-        settingsUpdateChangelogTitle.innerHTML = data.releaseName
-        settingsUpdateChangelogText.innerHTML = data.releaseNotes
-        populateVersionInformation(data.version, settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
+    return;
+
+    // if(data != null){
+    //     settingsUpdateTitle.innerHTML = isPrerelease(data.version) ? Lang.queryJS('settings.updates.newPreReleaseTitle') : Lang.queryJS('settings.updates.newReleaseTitle')
+    //     settingsUpdateChangelogCont.style.display = null
+    //     settingsUpdateChangelogTitle.innerHTML = data.releaseName
+    //     settingsUpdateChangelogText.innerHTML = data.releaseNotes
+    //     populateVersionInformation(data.version, settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
         
-        if(process.platform === 'darwin'){
-            settingsUpdateButtonStatus(Lang.queryJS('settings.updates.downloadButton'), false, () => {
-                shell.openExternal(data.darwindownload)
-            })
-        } else {
-            settingsUpdateButtonStatus(Lang.queryJS('settings.updates.downloadingButton'), true)
-        }
-    } else {
-        settingsUpdateTitle.innerHTML = Lang.queryJS('settings.updates.latestVersionTitle')
-        settingsUpdateChangelogCont.style.display = 'none'
-        populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
-        settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkForUpdatesButton'), false, () => {
-            if(!isDev){
-                ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkingForUpdatesButton'), true)
-            }
-        })
-    }
+    //     if(process.platform === 'darwin'){
+    //         settingsUpdateButtonStatus(Lang.queryJS('settings.updates.downloadButton'), false, () => {
+    //             shell.openExternal(data.darwindownload)
+    //         })
+    //     } else {
+    //         settingsUpdateButtonStatus(Lang.queryJS('settings.updates.downloadingButton'), true)
+    //     }
+    // } else {
+    //     settingsUpdateTitle.innerHTML = Lang.queryJS('settings.updates.latestVersionTitle')
+    //     settingsUpdateChangelogCont.style.display = 'none'
+    //     populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
+    //     settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkForUpdatesButton'), false, () => {
+    //         if(!isDev){
+    //             ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
+    //             settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkingForUpdatesButton'), true)
+    //         }
+    //     })
+    // }
 }
 
 /**
