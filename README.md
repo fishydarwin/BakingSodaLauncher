@@ -1,4 +1,5 @@
-<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="aventium softworks"></p>
+<p align="center"><img src="https://www.sakurafalls.net/bakingsoda/soda.png" width="150px" height="150px" 
+alt="Baking Soda Logo"></p>
 
 <h1 align="center">Baking Soda Launcher</h1>
 <h3 align="center">powered by Helios Launcher</h3>
