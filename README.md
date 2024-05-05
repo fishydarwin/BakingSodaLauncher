@@ -4,8 +4,8 @@ alt="Baking Soda Logo"></p>
 <h1 align="center">Baking Soda Launcher</h1>
 <h3 align="center">powered by Helios Launcher</h3>
 
-<p align="center">WARNING: DESCRIPTION IS WORK IN PROGRESS!</p>
-<p align="center">BELOW IS THE HELIOSLAUNCHER DESCRIPTION</p>
+<p align="center"><b>WARNING</b> DESCRIPTION IS WORK IN PROGRESS!<br>
+Below is the HeliosLauncher description.</p>
 
 <em><h5 align="center">(formerly Electron Launcher)</h5></em>
 
